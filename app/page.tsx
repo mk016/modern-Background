@@ -88,7 +88,7 @@ export default function Home() {
               </p>
               <div className="mt-10 flex gap-4">
                 <a
-                  href="https://github.com/ibelick/background-snippets"
+                  href="https://github.com/mk016"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center"
