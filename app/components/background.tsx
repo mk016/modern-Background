@@ -377,42 +377,33 @@ const BgColorGridsA9 = () => {
 
 
  const BgColorGridsA10: React.FC = () => {
-   return (
-     <div>
-       <div className="absolute inset-0 -z-10 h-full w-full bg-black [background:radial-gradient(245%_25%_at_70%,#ffffff_20%,#ffc0cb_100%)] animate-focus"></div>
-       <div></div>
-       <style>
-         {`
-           @keyframes blast {
-             0% {
-               transform: scale(1);
-               filter: blur(0);
-             }
-             100% {
-               transform: scale(2); /* Adjust this scale value to control the blast effect */
-               filter: blur(0);
-             }
-           }
- 
-           @keyframes converge {
-             0% {
-               transform: scale(2); /* Should match the final scale of the "blast" animation */
-               filter: blur(0);
-             }
-             100% {
-               transform: scale(1);
-               filter: blur(10px); /* Adjust this value to control the blur effect */
-             }
-           }
- 
-           .animate-focus {
-             animation: blast 1s forwards, converge 2s 1s forwards; /* Adjust timing as needed */
-           }
-         `}
-       </style>
-     </div>
-   );
- };
+  return (
+    <div className="relative h-full w-full overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient"></div>
+    <style>
+      {`
+        @keyframes gradientAnimation {
+          0% {
+            background-position: 0% 0%;
+          }
+          50% {
+            background-position: 100% 100%;
+          }
+          100% {
+            background-position: 0% 0%;
+          }
+        }
+
+        .animate-gradient {
+          background: linear-gradient(45deg, #ff6f61, #d0e1f9, #6b5b95);
+          background-size: 300% 300%;
+          animation: gradientAnimation 10s ease infinite;
+        }
+      `}
+    </style>
+  </div>
+  );
+}; 
 export default BgColorGrids;
 
 
