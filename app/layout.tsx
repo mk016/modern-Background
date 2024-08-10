@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
   title: 'modern-bg - ready-to-use background snippets for web developers',
   description:
-    'Ready-to-use, simply copy and paste into your next project. All snippets crafted with Tailwind CSS and Vanilla CSS for easy integration.',
+    '50+ Ready-to-use, simply copy and paste into your next project. All snippets crafted with Tailwind CSS and Vanilla CSS for easy integration.',
 };
 
 export default function RootLayout({
