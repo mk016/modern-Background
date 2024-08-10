@@ -528,6 +528,68 @@ const Darkbg2 = () => {
 
   );
 };
+const Lightbg1 = () => {
+  return (
+<div className="absolute inset-0 -z-10 h-full w-full px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#e0f7fa_40%,#dcf235_100%)]"></div>
+
+
+  );
+};
+const Lightbg2 = () => {
+  return (
+<div className="absolute inset-0 -z-10 h-full w-full px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#ffebee_40%,#ff9800_100%)]"></div>
+  );
+};
+const Lightbg3 = () => {
+  return (
+<div className="absolute inset-0 -z-10 h-full w-full px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#ffffff_40%,#000000_100%)]"></div>
+  );
+};
+const Lightbg4 = () => {
+  return (
+<div className="relative h-full w-full bg-slate-50">
+  <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,87,34,.15),rgba(255,255,255,0))]"></div>
+  <div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,87,34,.15),rgba(255,255,255,0))]"></div>
+</div>
+
+  );
+};
+const Lightbg5 = () => {
+  return (
+
+<div className="absolute inset-0 -z-10 h-full bg-[linear-gradient(to_right,#2d2d2d_20px,transparent_20px),linear-gradient(to_bottom,#2d2d2d_20px,transparent_20px),linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:0px_10px,100px_100px,50px_50px,50px_50px] bg-[position:0_0,0_0,0_0,0_0]"></div>
+
+  );
+};
+const Lightbg6 = () => {
+  return (
+<div className="relative h-full w-full overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-r from-green-300 via-yellow-400 to-green-300 animate-gradient"></div>
+  <style>
+    {`     @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+
+    .animate-gradient {
+      background: linear-gradient(45deg, rgba(22, 255, 102, 0.6), rgba(255, 255, 255, 0.3), rgba(222, 255, 102, 0.6));
+      background-size: 300% 300%;
+      animation: gradientAnimation 10s ease infinite;
+    }`}
+
+  </style>
+</div>
+
+
+  );
+};
 
 export const BACKGROUND_OPTIONS = [
   {
@@ -749,6 +811,30 @@ export const BACKGROUND_OPTIONS = [
     name: 'Background Dark Grid 3',
     component: <Darkbg2 />,
     theme: 'dark',
+  },
+  {
+    name: 'Background Dark Grid 3',
+    component: <Lightbg1 />,
+  },
+  {
+    name: 'Background Dark Grid 3',
+    component: <Lightbg2 />,
+  },
+  {
+    name: 'Background Dark Grid 3',
+    component: <Lightbg3 />,
+  },
+  {
+    name: 'Background Dark Grid 3',
+    component: <Lightbg4 />,
+  },
+  {
+    name: 'Background Dark Grid 3',
+    component: <Lightbg5 />,
+  },
+  {
+    name: 'Background Dark Grid 3',
+    component: <Lightbg6 />,
   },
 
 ] as const;
