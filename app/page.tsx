@@ -29,7 +29,7 @@ export default function Home() {
         <div className="relative mx-auto h-screen w-full max-w-7xl px-6 md:px-8 lg:px-12">
           <header className="flex items-center justify-between py-8">
             <div>
-              <h1 className='font-bold text-xl shadow-xl'>Modern bg</h1>
+              <h1 className='font-bold text-xl shadow-xl rounded-full px-4'>Modern bg</h1>
             </div>
             <nav className="flex items-center gap-6">
               <a
@@ -110,7 +110,7 @@ export default function Home() {
                   className="inline-flex items-center"
                 >
                   <Button>
-                    Go to GitHub <ArrowRight className="pl-0.5" size={16} />
+                   How to use <ArrowRight className="pl-0.5" size={16} />
                   </Button>{' '}
                 </a>
                 <Button variant="secondary" onClick={resetBg}>
