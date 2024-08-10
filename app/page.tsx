@@ -1,5 +1,5 @@
 'use client';
-import { ArrowRight, Github, Twitter } from 'lucide-react';
+import { ArrowRight, Github, Twitter, Sun, Moon } from 'lucide-react';
 import { BACKGROUND_OPTIONS } from './components/background';
 import { Button } from '@/components/ui/button';
 import Playground from './components/playground';
@@ -15,6 +15,10 @@ export default function Home() {
     setTheme('light');
   };
 
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
   return (
     <>
       <Toaster />
@@ -24,8 +28,10 @@ export default function Home() {
         </div>
         <div className="relative mx-auto h-screen w-full max-w-7xl px-6 md:px-8 lg:px-12">
           <header className="flex items-center justify-between py-8">
-            <div />
-            <nav className="flex gap-6">
+            <div>
+              <h1 className='font-bold text-xl shadow-xl'>Modern bg</h1>
+            </div>
+            <nav className="flex items-center gap-6">
               <a
                 href="https://twitter.com/MK__0168"
                 target="_blank"
@@ -48,6 +54,16 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </a>
+              <div className="relative">
+                <Button
+                  variant="outline"
+                  onClick={toggleTheme}
+                  className="flex items-center gap-2"
+                >
+                  {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+                  <span>{theme === 'light' ? 'Dark Mode' : 'Light Mode'}</span>
+                </Button>
+              </div>
             </nav>
           </header>
           <div className="pt-8">
