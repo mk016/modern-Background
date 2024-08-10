@@ -173,59 +173,7 @@ const BgDarkGrid5 = () => {
   
   );
 };
-const BgDarkSpider: React.FC = () => {
-  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
-  const [isMouseMoving, setIsMouseMoving] = useState<boolean>(false);
-  const containerRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      const { clientX, clientY } = event;
-      setMousePosition({ x: clientX, y: clientY });
-      setIsMouseMoving(true);
-      clearTimeout(mouseTimeout);
-      mouseTimeout = setTimeout(() => setIsMouseMoving(false), 100); // Set idle timeout
-    };
-
-    let mouseTimeout: NodeJS.Timeout;
-    document.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      clearTimeout(mouseTimeout);
-      document.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  return (
-    <div className="relative h-full w-full bg-black overflow-hidden" ref={containerRef}>
-      <div
-        className={`absolute inset-0 bg-[radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%)] 
-          ${isMouseMoving ? 'animate-focus-move' : 'animate-focus-idle'}`}
-        style={{
-          backgroundPosition: `${mousePosition.x * 0.05}px ${mousePosition.y * 0.05}px`,
-        }}
-      ></div>
-      <style>{`
-        @keyframes focusMove {
-          0% { transform: scale(1) translateX(0) translateY(0); }
-          100% { transform: scale(1.5) translateX(100%) translateY(100%); }
-        }
-        
-        @keyframes focusIdle {
-          0% { background-position: 0% 0%; }
-          100% { background-position: 100% 100%; }
-        }
-
-        .animate-focus-move {
-          animation: focusMove 10s linear infinite;
-        }
-
-        .animate-focus-idle {
-          animation: focusIdle 20s linear infinite;
-        }
-      `}</style>
-    </div>
-  );
-};
 const BgDarkGrid7 = () => {
   return (
 <div className="absolute inset-0 -z-10 h-full w-full bg-[#1e293b] bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[#0f172a] dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px]">
@@ -405,7 +353,174 @@ const BgColorGridsA9 = () => {
   );
 }; 
 export default BgColorGrids;
+const CrazyAnimatedBackground: React.FC = () => {
+  return (
+    <div className="relative h-full w-full overflow-hidden">
+      <div className="absolute inset-0 z-[-2] bg-black animate-crazy-background"></div>
+      <style>
+        {`
+          @keyframes crazyBackground {
+            0% {
+              background: radial-gradient(#ffffff33 1px, #00091d 1px);
+              background-size: 20px 20px;
+              transform: scale(1) rotate(0deg);
+            }
+            25% {
+              background: radial-gradient(#ff0000 1px, #000000 1px);
+              background-size: 50px 50px;
+              transform: scale(1.2) rotate(45deg);
+            }
+            50% {
+              background: radial-gradient(#00ff00 1px, #000000 1px);
+              background-size: 100px 100px;
+              transform: scale(1) rotate(90deg);
+            }
+            75% {
+              background: radial-gradient(#0000ff 1px, #000000 1px);
+              background-size: 150px 150px;
+              transform: scale(1.2) rotate(135deg);
+            }
+            100% {
+              background: radial-gradient(#ffffff33 1px, #00091d 1px);
+              background-size: 20px 20px;
+              transform: scale(1) rotate(180deg);
+            }
+          }
 
+          .animate-crazy-background {
+            animation: crazyBackground 10s linear infinite;
+          }
+        `}
+      </style>
+    </div>
+  );
+};
+const WaterBloomBackground: React.FC = () => {
+  return (
+    <div className="relative h-full w-full overflow-hidden">
+      <div className="absolute inset-0 z-[-1]">
+        <div className="water-blooms">
+          {Array.from({ length: 50 }).map((_, index) => (
+            <div
+              key={index}
+              className="water-bloom"
+              style={{
+                left: `${Math.random() * 100}vw`,
+                top: `${Math.random() * 100}vh`,
+                width: `${Math.random() * 40 + 20}px`,
+                height: `${Math.random() * 40 + 20}px`,
+                animationDelay: `${Math.random() * 10}s`,
+                animationDuration: `${5 + Math.random() * 5}s`,
+              }}
+            ></div>
+          ))}
+        </div>
+      </div>
+      <style>
+        {`
+          .water-blooms {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+          }
+
+          .water-bloom {
+            position: absolute;
+            background-color: rgba(0, 150, 255, 0.6);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: floatUp 10s ease-in-out infinite;
+          }
+
+          @keyframes floatUp {
+            0% {
+              transform: translateY(0) scale(1);
+              opacity: 0.6;
+            }
+            50% {
+              transform: translateY(-100vh) scale(1.5);
+              opacity: 0.4;
+            }
+            100% {
+              transform: translateY(0) scale(1);
+              opacity: 0.6;
+            }
+          }
+        `}
+      </style>
+    </div>
+  );
+};
+const CartoonCloudsBackground: React.FC = () => {
+  return (
+    <div className="relative h-full w-screen overflow-hidden">
+      <div className="absolute inset-0 z-[-1]">
+        <div className="background">
+          <div className="clouds">
+            {Array.from({ length: 10 }).map((_, index) => (
+              <div
+                key={index}
+                className="cloud"
+                style={{
+                  left: `${Math.random() * 100}vw`,
+                  top: `${Math.random() * 100}vh`,
+                  width: `${Math.random() * 150 + 100}px`,
+                  height: `${Math.random() * 60 + 60}px`,
+                  animationDelay: `${Math.random() * 10}s`,
+                  animationDuration: `${20 + Math.random() * 10}s`,
+                }}
+              ></div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <style>
+        {`
+          .background {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #87ceeb; /* Light sky blue */
+          }
+
+          .clouds {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+          }
+
+          .cloud {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            opacity: 0.9;
+            animation: floatClouds linear infinite;
+          }
+
+          @keyframes floatClouds {
+            0% {
+              transform: translateX(-150vw);
+            }
+            100% {
+              transform: translateX(150vw);
+            }
+          }
+        `}
+      </style>
+    </div>
+  );
+};
+const Darkbg1 = () => {
+  return (
+    <div className="relative h-full w-full bg-slate-950">
+      <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+    </div>
+  );
+};
 
 export const BACKGROUND_OPTIONS = [
   {
@@ -528,11 +643,11 @@ export const BACKGROUND_OPTIONS = [
     component: <BgDarkGrid5 />,
     theme: 'dark',
   },
-  {
-    name: 'Background Dark Grid 3',
-    component: <BgDarkSpider />,
-    theme: 'dark',
-  },
+  // {
+  //   name: 'Background Dark Grid 3',
+  //   component: <BgDarkSpider />,
+  //   theme: 'dark',
+  // },
   {
     name: 'Background Dark Grid 3',
     component: <BgDarkGrid7 />,
@@ -603,4 +718,25 @@ export const BACKGROUND_OPTIONS = [
     component: <BgColorGridsA10  />,
     theme: 'dark',
   },
+  {
+    name: 'Background Dark Grid 3',
+    component: <CrazyAnimatedBackground  />,
+    theme: 'dark',
+  },
+  {
+    name: 'Background Dark Grid 3',
+    component: <WaterBloomBackground />,
+    theme: 'dark',
+  },
+  {
+    name: 'Background Dark Grid 3',
+    component: <CartoonCloudsBackground />,
+    theme: 'dark',
+  },
+  {
+    name: 'Background Dark Grid 3',
+    component: <Darkbg1 />,
+    theme: 'dark',
+  },
+
 ] as const;
