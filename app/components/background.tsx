@@ -872,42 +872,52 @@ export const BACKGROUND_OPTIONS = [
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg1 />,
+    theme: 'dark',
   },
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg2 />,
+    theme: 'dark',
   },
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg3 />,
+    theme: 'dark',
   },
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg4 />,
+    theme: 'dark',
   },
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg5 />,
+    theme: 'dark',
   },
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg6 />,
+    theme: 'dark',
   },
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg7 />,
+    theme: 'dark',
   },
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg8 />,
+    theme: 'dark',
   },
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg9/>,
+    theme: 'dark',
   },
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg10 />,
+    theme: 'dark',
   },
 
 ] as const;
