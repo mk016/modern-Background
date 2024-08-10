@@ -590,6 +590,63 @@ const Lightbg6 = () => {
 
   );
 };
+const Lightbg7 = () => {
+  return (
+
+<div className="relative h-full w-full">
+
+  <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f5f5f5_1px,transparent_1px),linear-gradient(to_bottom,#f5f5f5_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
+  
+
+  <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_100%_200px,#FF7757,transparent)]"></div>
+  <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_20%_80px,#FF63B9,transparent)]"></div>
+</div>
+
+  );
+};
+const Lightbg8 = () => {
+  return (
+
+<div className="relative h-full w-full">
+ 
+  <div className="absolute inset-0 -z-10 bg-white bg-[linear-gradient(to_right,#f5f5f5_1px,transparent_1px),linear-gradient(to_bottom,#f5f5f5_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
+  
+  
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#8FFFB0,transparent)]"></div>
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#EAFF45,transparent)]"></div>
+</div>
+
+
+  );
+};
+const Lightbg9 = () => {
+  return (
+<div className="relative h-full w-full overflow-hidden">
+
+  <div className="absolute inset-0 -z-10 bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
+  
+
+  <div className ="absolute inset-0 bg-[radial-gradient(circle_at_center,#FF7112,transparent)]"></div>
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#FFF991,transparent)]"></div>
+
+
+  <div className="absolute inset-0">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#FFF991,transparent)] opacity-60 mix-blend-multiply"></div>
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#FF7112,transparent)] opacity-30 mix-blend-multiply"></div>
+  </div>
+</div>
+
+
+  );
+};
+const Lightbg10 = () => {
+  return (
+<div className="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,#FF4D00_0,#FF4D00_50%,transparent_100%)]"></div>
+
+
+
+  );
+};
 
 export const BACKGROUND_OPTIONS = [
   {
@@ -835,6 +892,22 @@ export const BACKGROUND_OPTIONS = [
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg6 />,
+  },
+  {
+    name: 'Background Dark Grid 3',
+    component: <Lightbg7 />,
+  },
+  {
+    name: 'Background Dark Grid 3',
+    component: <Lightbg8 />,
+  },
+  {
+    name: 'Background Dark Grid 3',
+    component: <Lightbg9/>,
+  },
+  {
+    name: 'Background Dark Grid 3',
+    component: <Lightbg10 />,
   },
 
 ] as const;
