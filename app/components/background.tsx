@@ -482,7 +482,7 @@ const CartoonCloudsBackground: React.FC = () => {
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #87ceeb; /* Light sky blue */
+            background-color: #829eeb; /* Light sky blue */
           }
 
           .clouds {
@@ -494,19 +494,19 @@ const CartoonCloudsBackground: React.FC = () => {
 
           .cloud {
             position: absolute;
-            background: #ffffff;
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            background: #334dash;
+            border-radius: 100%;
+            box-shadow: 0 0 14px rgba(0, 0, 0, 0.2);
             opacity: 0.9;
             animation: floatClouds linear infinite;
           }
 
           @keyframes floatClouds {
             0% {
-              transform: translateX(-150vw);
+              transform: translateX(-160vw);
             }
             100% {
-              transform: translateX(150vw);
+              transform: translateX(130vw);
             }
           }
         `}
@@ -516,9 +516,16 @@ const CartoonCloudsBackground: React.FC = () => {
 };
 const Darkbg1 = () => {
   return (
-    <div className="relative h-full w-full bg-slate-950">
-      <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-    </div>
+<div className="absolute inset-0 -z-10 h-full 1e1e] bg-[linear-gradient(to_right,#2d2d6d_1px,transparent_1px),linear-gradient(to_bottom,#2d2d2d_1px,transparent_1px)] bg-[size:190px_196px]" />
+
+  );
+};
+const Darkbg2 = () => {
+  return (
+<div className="absolute inset-0 -z-10 h-full w-full bg-[#1e1e1e] bg-[linear-gradient(to_right,#2d2d2d_1px,transparent_1px),linear-gradient(to_bottom,#2d2d2d_1px,transparent_1px)] bg-[size:6rem_4rem]">
+  <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_100px,#C9EBFF,transparent)]"></div>
+</div>
+
   );
 };
 
@@ -736,6 +743,11 @@ export const BACKGROUND_OPTIONS = [
   {
     name: 'Background Dark Grid 3',
     component: <Darkbg1 />,
+    theme: 'dark',
+  },
+  {
+    name: 'Background Dark Grid 3',
+    component: <Darkbg2 />,
     theme: 'dark',
   },
 
