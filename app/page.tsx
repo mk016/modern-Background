@@ -113,7 +113,7 @@ export default function Home() {
                   className="inline-flex items-center"
                 >
                   <Button>
-                   How to use <ArrowRight className="pl-0.5" size={16} />
+                   Go to Github <ArrowRight className="pl-0.5" size={16} />
                   </Button>{' '}
                 </a>
                 <Button variant="secondary" onClick={resetBg}>
