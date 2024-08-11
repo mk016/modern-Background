@@ -842,7 +842,7 @@ export const BACKGROUND_OPTIONS = [
   {
     name: 'Background Dark Grid 3',
     component: <BgColorGridsA10  />,
-    theme: 'dark',
+    theme: 'light',
   },
   {
     name: 'Background Dark Grid 3',
@@ -852,7 +852,7 @@ export const BACKGROUND_OPTIONS = [
   {
     name: 'Background Dark Grid 3',
     component: <WaterBloomBackground />,
-    theme: 'dark',
+    theme: 'ligth',
   },
   {
     name: 'Background Dark Grid 3',
@@ -862,7 +862,7 @@ export const BACKGROUND_OPTIONS = [
   {
     name: 'Background Dark Grid 3',
     component: <Darkbg1 />,
-    theme: 'dark',
+    theme: 'ligth',
   },
   {
     name: 'Background Dark Grid 3',
@@ -882,22 +882,22 @@ export const BACKGROUND_OPTIONS = [
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg3 />,
-    theme: 'dark',
+    theme: 'ligth',
   },
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg4 />,
-    theme: 'dark',
+    theme: 'ligth',
   },
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg5 />,
-    theme: 'dark',
+    theme: 'ligth',
   },
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg6 />,
-    theme: 'dark',
+    theme: 'ligth',
   },
   {
     name: 'Background Dark Grid 3',
@@ -907,12 +907,12 @@ export const BACKGROUND_OPTIONS = [
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg8 />,
-    theme: 'dark',
+    theme: 'light',
   },
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg9/>,
-    theme: 'dark',
+    theme: 'ligth',
   },
   {
     name: 'Background Dark Grid 3',
