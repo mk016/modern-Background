@@ -4,13 +4,13 @@ import { ArrowRight, Github, Twitter, Sun, Moon } from 'lucide-react';
 import { BACKGROUND_OPTIONS } from './components/background';
 import { Button } from '@/components/ui/button';
 import Playground from './components/playground';
-import { useState } from 'react';
+import { useState, ReactNode } from 'react';
 import { Toaster } from 'sonner';
 
 type Theme = 'light' | 'dark';
 
 export default function Home() {
-  const [preview, setPreview] = useState<React.ReactNode | null>(null);
+  const [preview, setPreview] = useState<ReactNode | null>(null);
   const [theme, setTheme] = useState<Theme>('light');
 
   const resetBg = () => {
@@ -130,7 +130,7 @@ export default function Home() {
                 <Playground
                   key={index}
                   setPreview={setPreview}
-                  theme={background.theme}
+                  theme={background.theme as Theme} // Ensure theme is of type 'Theme'
                   setTheme={setTheme}
                 >
                   {background.component}
