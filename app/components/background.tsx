@@ -902,7 +902,7 @@ export const BACKGROUND_OPTIONS = [
   {
     name: 'Background Dark Grid 3',
     component: <Lightbg7 />,
-    theme: 'dark',
+    theme: 'light',
   },
   {
     name: 'Background Dark Grid 3',
